@@ -30,6 +30,18 @@ const createRouter = function (collection) {
     })
   });
 
+  //CREATE
+  router.post('/', (req, res) => {
+    const newBooking = req.body;
+    collection.insertOne(newBooking)
+    .then((result) => {
+      res.json(results.ops[0])
+    })
+    .catch((err) => {
+      dealWithError(err, res)
+    })
+  });
+
 
   return router;
 
