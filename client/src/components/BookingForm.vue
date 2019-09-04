@@ -65,7 +65,6 @@ form {
   background-color: black;
   opacity: 0.8;
   color: white;
-  justify-content: center;
   box-shadow: 0 0 30px white;
 }
 
