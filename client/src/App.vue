@@ -33,9 +33,17 @@ export default {
       fetch("http://localhost:3000/api/bookings")
       .then(res => res.json())
       .then(bookings => this.bookings = bookings)
+
+      eventBus.$on('booking-added', (booking) => {
+        this.bookings.push(booking)
+      })
+
+      eventBus.$on('booking-deleted', (id) => {
+        let index = this.bookings.findIndex(booking => booking._id === id)
+        this.bookings.splice(index, 1)
+      })
     }
   }
-
 }
 </script>
 
