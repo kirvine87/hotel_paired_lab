@@ -32,10 +32,27 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 #bookingsList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+div.booking {
+  border-left: 1px solid white;
+  padding: 20px;
+  width: 310px;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+  box-shadow: 0 0 5px white;
+  margin: 0.13em;
+}
+
+#booking {
+  display: flex;
+  justify-content: space-between;
 }
 
 </style>
