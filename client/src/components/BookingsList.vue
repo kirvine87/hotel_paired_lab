@@ -5,6 +5,7 @@
       <h3>Email: {{booking.email}}</h3>
       <h3 v-if="booking.checkedIn">Checked In</h3>
       <h3 v-else>Not Checked In</h3>
+      <h3> </h3>
 
 
       <button @click="deleteBooking(booking._id)" name="button">Delete Booking</button>
