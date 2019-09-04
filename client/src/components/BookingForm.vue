@@ -16,7 +16,7 @@
       <div class="row">
 
       <label for="checkedIn">Check In</label>
-      <input type="checkbox" id="checkedIn" v-model="checkIn" value="">
+      <input type="checkbox" id="checkedIn" v-model="checkedIn" value="">
     </div>
 
       <input type="submit" value="Save">
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-// import HotelsService from "@/services/HotelsService"
+import HotelsService from "@/services/HotelsService"
 import { eventBus } from "@/main.js";
 
 export default {
