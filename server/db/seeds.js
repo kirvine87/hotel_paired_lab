@@ -1,7 +1,7 @@
 use hotel;
 db.dropDatabase();
 
-db.insertMany([
+db.bookings.insertMany([
   {
     name: "Silly Billy",
     email: "SillyBoi@gmail.com",
