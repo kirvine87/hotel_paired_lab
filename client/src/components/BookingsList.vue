@@ -3,8 +3,8 @@
     <div class="booking" v-for="booking of bookings">
       <h3>Name: {{booking.name}}</h3>
       <h3>Email: {{booking.email}}</h3>
-      <h3 v-if="booking.checkedIn" @click="updateStatus(booking)">Checked In</h3>
-      <h3 v-else @click="updateStatus(booking)">
+      <h3 id="status" v-if="booking.checkedIn" @click="updateStatus(booking)">Checked In</h3>
+      <h3 id="status" v-else @click="updateStatus(booking)">
         Not Checked In</h3>
       <h3> </h3>
 
@@ -67,6 +67,11 @@ div.booking {
 #booking {
   display: flex;
   justify-content: space-between;
+}
+
+#status:hover {
+  color: green;
+  cursor: pointer;
 }
 
 </style>
