@@ -37,7 +37,7 @@ export default {
       this.bookings.splice(index, 1)
     })
 
-    eventBus.$on('booking-updated', (id) => {})
+    // eventBus.$on('booking-updated', (id) => {})
   },
   methods: {
     fetchData(){
