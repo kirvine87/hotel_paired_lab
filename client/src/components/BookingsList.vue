@@ -37,9 +37,9 @@ export default {
       const bookingStatus = {checkedIn: booking.checkedIn};
 
       HotelsService.updateBooking(bookingID, bookingStatus)
-      .then(() => {
-        eventBus.$emit('booking-updated', bookingStatus)
-      })
+      // .then(() => {
+      //   eventBus.$emit('booking-updated', bookingStatus)
+      // })
     }
   }
 }
