@@ -11,7 +11,7 @@
 import HotelsService from '@/services/HotelsService';
 import BookingForm from '@/components/BookingForm';
 import BookingsList from '@/components/BookingsList';
-import { eventBus } from '@/main.js';
+import { eventBus } from '@/main.js'; 
 
 
 export default {
