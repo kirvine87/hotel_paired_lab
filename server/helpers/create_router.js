@@ -52,10 +52,26 @@ const createRouter = function (collection) {
     })
   })
 
+  //
+  router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const updatedBooking = req.body;
+    collection.findOneAndUpdate(
+      { _id: ObjectID(id) },
+      { $set: updatedBooking},
+      {returnOriginal: false}
+    )
+    .then(result => res.json(result.value))
+    .catch((err) => {
+      dealWithError(err, res)
+    })
+  })
+
+
 
   return router;
 
 }
 
 
-module.exports = createRouter
+module.exports = createRouter;
