@@ -11,7 +11,7 @@
 import HotelsService from '@/services/HotelsService';
 import BookingForm from '@/components/BookingForm';
 import BookingsList from '@/components/BookingsList';
-import { eventBus } from '@/main.js'; 
+import { eventBus } from '@/main.js';
 
 
 export default {
@@ -36,6 +36,8 @@ export default {
       let index = this.bookings.findIndex(booking => booking._id === id)
       this.bookings.splice(index, 1)
     })
+
+    eventBus.$on('booking-updated', (id) => {})
   },
   methods: {
     fetchData(){

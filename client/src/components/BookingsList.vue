@@ -3,8 +3,9 @@
     <div class="booking" v-for="booking of bookings">
       <h3>Name: {{booking.name}}</h3>
       <h3>Email: {{booking.email}}</h3>
-      <h3 v-if="booking.checkedIn">Checked In</h3>
-      <h3 v-else>Not Checked In</h3>
+      <h3 v-if="booking.checkedIn" @click="updateStatus(booking)">Checked In</h3>
+      <h3 v-else @click="updateStatus(booking)">
+        Not Checked In</h3>
       <h3> </h3>
 
 
@@ -26,6 +27,18 @@ export default {
       HotelsService.deleteBooking(id)
       .then(() => {
         eventBus.$emit('booking-deleted', id)
+      })
+    },
+    updateStatus(booking){
+      const bookingID = booking._id;
+
+      booking.checkedIn = !booking.checkedIn
+
+      const bookingStatus = {checkedIn: booking.checkedIn};
+
+      HotelsService.updateBooking(bookingID, bookingStatus)
+      .then(() => {
+        eventBus.$emit('booking-updated', bookingStatus)
       })
     }
   }

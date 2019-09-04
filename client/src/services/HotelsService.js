@@ -5,7 +5,7 @@ export default {
     return fetch(baseURL, {
       method: 'POST',
       body: JSON.stringify(payload),
-      headers: { 'Content-Type' : 'application/json'}
+      headers: { 'Content-Type' : 'application/json' }
     })
     .then(res => res.json())
   },
@@ -13,5 +13,13 @@ export default {
     return fetch(baseURL + id, {
       method: 'DELETE'
     })
+  },
+  updateBooking(id, booking) {
+    return fetch(baseURL + id, {
+      method: 'PUT',
+      body: JSON.stringify(booking),
+      headers: { 'Content-Type' : 'application/json' }
+    })
+    .then(res => res.json())
   }
 }

@@ -62,6 +62,9 @@ const createRouter = function (collection) {
       {returnOriginal: false}
     )
     .then(result => res.json(result.value))
+    .catch((err) => {
+      dealWithError(err, res)
+    })
   })
 
 
@@ -71,4 +74,4 @@ const createRouter = function (collection) {
 }
 
 
-module.exports = createRouter
+module.exports = createRouter;
