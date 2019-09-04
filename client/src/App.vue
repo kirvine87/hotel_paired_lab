@@ -2,7 +2,7 @@
 
   <div id="app">
     <BookingForm />
-    <BookingsList />
+    <BookingsList :bookings="bookings" />
   </div>
 
 </template>
@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-body {
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 </style>
