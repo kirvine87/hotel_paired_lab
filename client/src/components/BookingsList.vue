@@ -1,11 +1,11 @@
 <template lang="html">
   <div id="bookingsList">
-    <div class="booking">
-      <h3>Name:</h3>
-      <h3>Email:</h3>
-      <h3>Checked: </h3>
+    <div class="booking" v-for="booking of bookings">
+      <h3>Name: {{booking.name}}</h3>
+      <h3>Email: {{booking.email}}</h3>
+      <h3>Status: {{booking.checkedIn}}</h3>
 
-      <button @click="deleteBooking" name="button">Delete Booking</button>
+      <button @click="deleteBooking(booking._id)" name="button">Delete Booking</button>
     </div>
 
   </div>
