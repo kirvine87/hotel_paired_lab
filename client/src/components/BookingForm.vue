@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <form id="bookings-form" method="post" @submit="saveBooking">
+  <form id="bookings-form" v-on:submit="saveBooking" method="post">
     <h2>Hotel Pull and Push</h2>
 
       <div class="row">
@@ -16,7 +16,7 @@
       <div class="row">
 
       <label for="checkedIn">Check In</label>
-      <input type="checkbox" id="checkedIn" v-model="checkedIn" value="">
+      <input type="checkbox" id="checkedIn" v-model="checkedIn">
     </div>
 
       <input type="submit" value="Save">
