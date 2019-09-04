@@ -11,7 +11,7 @@
       <div class="row">
       <label for="email">E-mail:</label>
       <input type="email" id="email" placeholder="YourName@gmail.com" pattern=".+@gmail.com" v-model="email" required/>
-    </div>
+    </div> 
 
       <div class="row">
 
