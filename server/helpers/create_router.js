@@ -18,6 +18,38 @@ const createRouter = function (collection) {
     .catch((err) => {
       dealWithError(err, res)
     })
+  });
+
+  //SHOW
+  router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    collection.findOne({ _id: ObjectID(id) })
+    .then((doc) => res.json(doc))
+    .catch((err) => {
+      dealWithError(err, res)
+    })
+  });
+
+  //CREATE
+  router.post('/', (req, res) => {
+    const newBooking = req.body;
+    collection.insertOne(newBooking)
+    .then((result) => {
+      res.json(results.ops[0])
+    })
+    .catch((err) => {
+      dealWithError(err, res)
+    })
+  });
+
+  //DELETE
+  router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    collection.deleteOne({ _id: ObjectID(id) })
+    .then(result => res.json(result))
+    .catch((err) => {
+      dealWithError(err, res)
+    })
   })
 
 
