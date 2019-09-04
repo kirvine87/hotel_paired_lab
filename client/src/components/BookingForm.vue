@@ -1,4 +1,5 @@
 <template lang="html">
+  <div>
 
   <form id="bookings-form" v-on:submit="saveBooking" method="post">
     <h2>Hotel Pull and Push</h2>
@@ -11,11 +12,11 @@
       <div class="row">
       <label for="email">E-mail:</label>
       <input type="email" id="email" placeholder="YourName@gmail.com" pattern=".+@gmail.com" v-model="email" required/>
-    </div> 
+    </div>
 
       <div class="row">
 
-      <label for="checkedIn">Check In</label>
+      <label id="checkintext" for="checkedIn">Check In</label>
       <input type="checkbox" id="checkedIn" v-model="checkedIn">
     </div>
 
@@ -23,6 +24,8 @@
 
   </form>
 
+  <h1>Welcome</h1>
+  </div>
 </template>
 
 <script>
@@ -58,12 +61,39 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 500px;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  justify-content: center;
+  box-shadow: 0 0 30px white;
+}
+
+#checkedIn {
+  position: relative;
+  left: 4px;
+}
+
+#checkintext {
+  position: relative;
+  left: -56px;
 }
 
 .row {
   display: flex;
   flex-direction: row;
+  padding: 1%;
 }
+
+h1 {
+  text-align: center;
+  padding: 50px;
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+  box-shadow: 0 0 30px white;
+}
+
 
 label {
   width: 10em;
