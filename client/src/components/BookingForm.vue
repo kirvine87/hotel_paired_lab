@@ -51,6 +51,8 @@ export default {
       }
       HotelsService.postBooking(booking)
       .then(res => eventBus.$emit('booking-added', res))
+      this.name = this.email = "";
+      this.checkedIn = false;
     }
   }
 }
