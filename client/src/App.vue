@@ -49,26 +49,23 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-html {
-
+<style lang="css">
+body {
+  background-image: url('../public/back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #app {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #FAEBD7;
   height: 100vh;
   padding: 0;
   margin: 0;
   align-items: center;
-  background-image: url('../public/back.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-body {
 
-}
 </style>

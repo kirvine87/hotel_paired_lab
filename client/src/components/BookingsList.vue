@@ -51,6 +51,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-height: 50vh;
+  overflow: scroll;
 }
 
 div.booking {
