@@ -50,9 +50,10 @@ export default {
         checkedIn: this.checkedIn
       }
       HotelsService.postBooking(booking)
-      .then(res => eventBus.$emit('booking-added', res))
-      this.name = this.email = "";
-      this.checkedIn = false;
+      .then((res) =>  {
+        this.name = this.email = "";
+        this.checkedIn = false;
+        eventBus.$emit('booking-added', res)})
     }
   }
 }
